@@ -1,0 +1,52 @@
+/* css  */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* this is the style for the phone number page */
+
+.Phone_number{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'poppins';
+    min-height:100vh;
+
+}
+
+.Phone_number input {
+  background:transparent;
+  outline:none;
+  border:none;
+  font-size:1rem;
+  color:white;
+  border:1px solid #000000;
+  border-radius:4px;
+  padding:15px;
+  margin-bottom:20px;
+}
+
+.Phone_number button{
+  background:transparent;
+  border:0.5px solid black;
+  border-radius:4px;
+  padding:15px;
+  cursor:pointer;
+  margin-bottom:20px;
+}
+
+.Phone_number p,h1{
+  font-weight:300px;
+  margin:5px 0; 
+}
+
+.main .Phone_box{
+  margin-bottom:50px;
+}
+
+.main{
+  background:#A7C7E7;
+  padding:4%;
+  border-radius:10px;
+  min-width:510px;
+  min-height:300px;
+}

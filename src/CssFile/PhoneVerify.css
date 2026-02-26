@@ -1,0 +1,43 @@
+.Phone_Verify{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'poppins';
+    min-height:100vh;
+
+}
+
+.Main_Verify input {
+  background:transparent;
+  outline:none;
+  border:none;
+  border:0.5px solid #ede8e8;
+  border-radius:4px;
+  padding:15px;
+  margin-bottom:20px;
+}
+
+.Main_Verify button{
+  background:transparent;
+  border:0.5px solid black;
+  border-radius:4px;
+  padding:15px;
+  cursor:pointer;
+  margin-bottom:20px;
+}
+
+.Main_Verify p,h1{
+  font-weight:300px;
+}
+
+.Main_Verify .Phone_box{
+  margin-bottom:50px;
+}
+
+.Main_Verify{
+  background:#A7C7E7;
+  padding:4%;
+  border-radius:10px;
+  max-width:450px;
+  min-height:450px;
+}
