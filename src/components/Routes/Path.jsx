@@ -1,16 +1,18 @@
 import React from 'react'
 import {Routes,Route } from 'react-router-dom'
-import Email from '../Pages/Email'
-import Info from '../Pages/Info'
 import Sms from '../Pages/Sms'
+import SmsVerify from '../Pages/SmsVerify'
+import Email from '../Pages/Email'
 
 const Path = () => {
   return (
    <Routes> 
-    <Route path="/Sms/:name" element={<Sms />} /> 
-    <Route path="/" element={<Info />} /> 
+    <Route path="/" element={<Sms />} /> 
+    <Route path="/SmsVerify" element={<SmsVerify />} />
+    <Route path='/email' element={<Email />}/>
    </Routes>
   )
 }
+
 
 export default Path
