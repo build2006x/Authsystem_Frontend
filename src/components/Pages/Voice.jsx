@@ -1,15 +1,17 @@
 import React from 'react'
 
 const Voice = () => {
+  
+
   return (
-    <div>
+    <form onSubmit={(e)=>e.preventDefault()} >
         <h1>Voice Verification</h1>
         <p>we call you with a automated message contains your verification code</p>
-        <input type='number'placeholder='enter the code' ></input>
+        <input type='text' placeholder='enter the code'></input>
         <br></br>
         <br></br>
-        <button>touch to get your code</button>
-    </div>
+        <button> touch to get your code</button>
+    </form>
   )
 }
 

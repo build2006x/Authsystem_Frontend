@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Email from './Email'
+
 
 const EmailVerify = () => {
+  
+  const [EamilCode,SetEmailCode]  = useState()
+
   return (
-    <div>
-      <h1>check yor email</h1>
-      <p>we sent a code to @gmail.com</p>
-      <input type='number' placeholder='enter the code'></input>
-      <br></br>
-      <br></br>
-      <button>resend code</button>
-    </div>
+    <form onSubmit={(e)=>e.preventDefault()} >
+        <input type='text' onChange={(e)=>SetEmailCode(e.target.value)} placeholder='name***@gamil.com'></input>
+        <br></br>
+        <button>Send Code</button>
+  </form>
   )
 }
 
