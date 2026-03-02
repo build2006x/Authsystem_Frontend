@@ -1,24 +1,37 @@
-import React, { useState} from 'react'
+import React, {  useState} from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const Email = () => {
 
   const [Email,SetEmail] = useState("")
-
+  const [Code,SetCode] = useState("")
+  const [VerifyEmail,setVerifyEmail] = useState("")
+  const [VerifyCode,SetVerifyCode] = useState("")
+  const next = useNavigate()
 
   const Gmailrequest = async () => {
     try { 
 
         const response = await axios.post( "http://127.0.0.1:8000/Gmail/EmailSend", 
         { email: Email }, { headers: { "Content-Type": "application/json" } } )
-        console.log(response.data)
+        SetCode(response.data["code_sent"])
+        console.log(response.data["status"])
+        console.log(response.data["code_sent"])
     }
     catch(err){
        console.log(err)
     }
- 
   }
-     
+ 
+  const VerifyAuth = () => {
+      if(VerifyEmail === Email && VerifyCode === Code){
+        alert("Email verified successfully")
+      }
+      else{
+        next('/VoiceRoute')
+      }
+  } 
 
   return (
      <div className='Phone_number'>
@@ -39,13 +52,13 @@ const Email = () => {
                <br></br>
                <p>verify the gamil</p>
                <form onSubmit={(e)=>e.preventDefault()}>
-                   <input type='text' placeholder='enter your verifying gamil'></input>
+                   <input type='text' value={VerifyEmail} onChange={(e)=>setVerifyEmail(e.target.value)}  placeholder='enter your verifying gamil'></input>
                    <br></br>
                    <br></br>
-                   <input  type='text' placeholder='enter the code'></input>
+                   <input  type='text' value={VerifyCode} onChange={(e)=>SetVerifyCode(e.target.value)} placeholder='enter the code'></input>
                    <br></br>
                    <br></br>
-                   <button>verify</button>
+                   <button onClick={VerifyAuth}>verify</button>
                </form>
           </div>
        </div> 
