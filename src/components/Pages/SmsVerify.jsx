@@ -21,7 +21,7 @@ const VerifyPhone = () => {
         }
       }
       catch (error) {
-        console.error('Error verifying code:', error.response?.data || error.message)
+        nav('/email')
       }
     }
 

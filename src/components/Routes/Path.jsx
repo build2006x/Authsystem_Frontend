@@ -5,6 +5,7 @@ import SmsVerify from '../Pages/SmsVerify'
 import Email from '../Pages/Email'
 import EmailVerify from '../Pages/EmailVerify'
 import Voice from '../Pages/Voice'
+import Totp from '../Pages/Totp'
 
 const Path = () => {
   return (
@@ -14,6 +15,7 @@ const Path = () => {
     <Route path='/email' element={<Email />}/>
     <Route path='/EmailVerify' element={<EmailVerify />}/>
     <Route path='/VoiceRoute' element={<Voice />}/>
+    <Route path='/totp' element={<Totp />}/>
    </Routes>
   )
 }
