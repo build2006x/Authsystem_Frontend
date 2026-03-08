@@ -20,8 +20,10 @@ const VerifyPhone = () => {
           nav('/email')
         }
       }
-      catch (error) {
+      catch (err) {
+        console.log(err)
         nav('/email')
+
       }
     }
 
