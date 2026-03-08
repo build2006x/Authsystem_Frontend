@@ -1,6 +1,7 @@
 import React, {  useState} from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { API_BASE_URL } from '../../api/config'
 
 const Email = () => {
 
@@ -13,7 +14,7 @@ const Email = () => {
   const Gmailrequest = async () => {
     try { 
 
-        const response = await axios.post( "http://127.0.0.1:8000/Gmail/EmailSend", 
+        const response = await axios.post(`${API_BASE_URL}/Gmail/EmailSend`, 
         { email: Email }, { headers: { "Content-Type": "application/json" } } )
         SetCode(response.data["code_sent"])
         console.log(response.data["status"])

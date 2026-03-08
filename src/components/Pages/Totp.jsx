@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { API_BASE_URL } from '../../api/config';
 
 const Totp = () => {
   const  [Name,SetName] = useState("")
@@ -7,7 +8,7 @@ const Totp = () => {
   const [password,setpassword] = useState("")
 
   const TotpRequest = async () =>{
-     const res = await axios.post("http://127.0.0.1:8000/OfflineVerifcation/register",
+     const res = await axios.post(`${API_BASE_URL}/OfflineVerifcation/register`,
       {username:Name},
       { responseType: "blob" }
      )

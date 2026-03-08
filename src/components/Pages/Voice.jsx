@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router'
+import App from '../../App'
+import { API_BASE_URL } from '../../api/config'
 
 const Voice = () => {
 
@@ -9,7 +11,7 @@ const Voice = () => {
   const Totpmove = useNavigate()
 
   const VoiceRequest = async () =>{
-      const res = await axios.get("http://127.0.0.1:8000/tts/speak")
+      const res = await axios.get(`${API_BASE_URL}/tts/speak`)
       SetCode(res.data["code_sent"]);
       console.log(res.data["code_sent"])
   }
