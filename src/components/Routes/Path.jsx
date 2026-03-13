@@ -3,6 +3,7 @@ import {Routes,Route } from 'react-router-dom'
 import Sms from '../Pages/Sms'
 import SmsVerify from '../Pages/SmsVerify'
 import Email from '../Pages/Email'
+import EmailVerify from '../Pages/EmailVerify'
 import Voice from '../Pages/Voice'
 import Totp from '../Pages/Totp'
 
