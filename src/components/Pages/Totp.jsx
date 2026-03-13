@@ -19,7 +19,7 @@ const Totp = () => {
 
   const VerifyPassword = async (e)  =>{
       e.preventDefault();
-      const res = await axios.get(`http://127.0.0.1:8000/OfflineVerifcation/verify/neels?code=${password}`)
+      const res = await axios.get(`${API_BASE_URL}/OfflineVerifcation/verify/${Name}?code=${password}`)
       console.log(res.data["message"])
       // if(res.data["message"] == "OTP verified"){
       //   alert("sucessfully verified") 

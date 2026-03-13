@@ -4,11 +4,11 @@ import Email from './Email'
 
 const EmailVerify = () => {
   
-  const [EamilCode,SetEmailCode]  = useState()
+  const [emailCode,setEmailCode]  = useState()
 
   return (
     <form onSubmit={(e)=>e.preventDefault()} >
-        <input type='text' onChange={(e)=>SetEmailCode(e.target.value)} placeholder='name***@gamil.com'></input>
+        <input type='text' onChange={(e)=>setEmailCode(e.target.value)} placeholder='name***@gamil.com'></input>
         <br></br>
         <button>Send Code</button>
   </form>

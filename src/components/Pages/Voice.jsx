@@ -1,7 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router'
-import App from '../../App'
+import { useNavigate } from 'react-router-dom'
 import { API_BASE_URL } from '../../api/config'
 
 const Voice = () => {

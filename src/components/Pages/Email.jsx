@@ -5,8 +5,8 @@ import { API_BASE_URL } from '../../api/config'
 
 const Email = () => {
 
-  const [Email,SetEmail] = useState("")
-  const [Code,SetCode] = useState("")
+  const [email,setEmail] = useState("")
+  const [emailCode,setEmailCode] = useState("")
   const [VerifyEmail,setVerifyEmail] = useState("")
   const [VerifyCode,SetVerifyCode] = useState("")
   const next = useNavigate()
@@ -15,7 +15,7 @@ const Email = () => {
     try { 
 
         const response = await axios.post(`${API_BASE_URL}/Gmail/EmailSend`, 
-        { email: Email }, { headers: { "Content-Type": "application/json" } } )
+        { email: email }, { headers: { "Content-Type": "application/json" } } )
         SetCode(response.data["code_sent"])
         console.log(response.data["status"])
         console.log(response.data["code_sent"])
@@ -26,7 +26,7 @@ const Email = () => {
   }
  
   const VerifyAuth = () => {
-      if(VerifyEmail === Email && VerifyCode === Code){
+      if(VerifyEmail === email && VerifyCode === Code){
         alert("Email verified successfully")
       }
       else{
@@ -44,7 +44,7 @@ const Email = () => {
                </div>
                <br></br>
                <form onSubmit={(e)=>e.preventDefault()} >
-                 <input type='text' value={Email} onChange={(e)=>SetEmail(e.target.value)} placeholder='name***@gamil.com'></input>
+                 <input type='text' value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='name***@gamil.com'></input>
                  <br></br>
                  <br></br>
                  <button onClick={Gmailrequest}>Send Code</button>
