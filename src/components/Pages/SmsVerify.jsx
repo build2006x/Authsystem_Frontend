@@ -1,6 +1,7 @@
 import React, {useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { API_BASE_URL } from '../../api/config'
 
 
 const VerifyPhone = () => {
@@ -12,7 +13,7 @@ const VerifyPhone = () => {
     // Method 2: Get Code (GET request)
     const getCode = async () => {
       try {
-        const res = await axios.get(`http://127.0.0.1:8000/verify_otp?phone=${PhoneNumber}&code=${Code}`)
+        const res = await axios.get(`${API_BASE_URL}/verify_otp?phone=${PhoneNumber}&code=${Code}`)
        if (res.data['status'] === 'Sucess') {
               alert('Phone number verified successfully!')
           }
