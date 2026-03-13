@@ -14,7 +14,7 @@ const Sms = () => {
   
   const sendCode = async () => {
     try {
-      await axios.post(`${API_BASE_URL}/OtpSend?PhoneNumber=${Number(PhoneNumber)}`)
+      await axios.get(`${API_BASE_URL}/OtpSend?PhoneNumber=${Number(PhoneNumber)}`)
       SetPhoneNumber("")
       navigate('/SmsVerify')
     } 
