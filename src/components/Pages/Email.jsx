@@ -16,7 +16,7 @@ const Email = () => {
 
         const response = await axios.post(`${API_BASE_URL}/Gmail/EmailSend`, 
         { email: email }, { headers: { "Content-Type": "application/json" } } )
-        SetCode(response.data["code_sent"])
+        setEmailCode(response.data["code_sent"])
         console.log(response.data["status"])
         console.log(response.data["code_sent"])
     }
@@ -26,7 +26,7 @@ const Email = () => {
   }
  
   const VerifyAuth = () => {
-      if(VerifyEmail === email && VerifyCode === Code){
+      if(VerifyEmail === email && VerifyCode === emailCode){
         alert("Email verified successfully")
       }
       else{
